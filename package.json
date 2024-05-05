@@ -1,5 +1,5 @@
 {
-  "name": "am-elementui",
+  "name": "am-element",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -29,7 +29,8 @@
     "lodash-es": "^4.17.21",
     "vue": "^3.4.19",
     "am-element": "workspace:*",
-    "@am-element/hoos": "workspace:*",
+    "@am-element/hooks": "workspace:*",
+    "@am-element/components": "workspace:*",
     "@am-element/utils": "workspace:*",
     "@am-element/theme": "workspace:*"
   }
