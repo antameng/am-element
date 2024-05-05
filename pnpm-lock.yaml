@@ -75,6 +75,9 @@ importers:
 
   packages/components:
     dependencies:
+      '@am-element/utils':
+        specifier: workspace:*
+        version: link:../utils
       '@popperjs/core':
         specifier: ^2.11.8
         version: 2.11.8
