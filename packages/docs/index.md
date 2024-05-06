@@ -3,9 +3,8 @@
 layout: home
 
 hero:
-  name: "am的组件库"
-  text: "（高仿ElementPlus）"
-  base: "/am-element/"
+  name: "am-element"
+  text: "高仿element-plus组件库"
   tagline: My great project tagline
   actions:
     - theme: brand

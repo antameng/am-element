@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "am的组件库（高仿ElementPlus）",
-  description: "高仿",
+  title: "am-element",
+  description: "高仿element-plus组件库",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
