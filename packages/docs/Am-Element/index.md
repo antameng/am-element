@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "am的组件库"
   text: "（高仿ElementPlus）"
-  base: "/am-element/"
+  base: "/Am-Element/"
   tagline: My great project tagline
   actions:
     - theme: brand
