@@ -13,7 +13,23 @@ export interface ButtonProps {
   circle?: boolean;
   disabled?: boolean;
   loading?: boolean;
+  loadingIcon?: boolean;
   icon?: string;
   iconPosition?: "left" | "right" | "top" | "bottom";
   square?: boolean;
+  autofocus?: boolean;
+  useThrottle?: boolean;
+  throttleDuration?: number;
+}
+
+export  interface ButtonEmits{
+  (e:'click',val:MouseEvent):void;
+}
+
+export interface ButtonInstance {
+  ref:Ref<HTMLElement|void>
+}
+
+export  interface ButtonSlots{
+  (e:'icon',val:string):void;
 }
