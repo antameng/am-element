@@ -1,0 +1,199 @@
+.am-button-group {
+  --am-button-group-border-color: var(--am-border-color-lighter);
+}
+.am-button {
+  --am-button-font-weight: var(--am-font-weight-primary);
+  --am-button-border-color: var(--am-border-color);
+  --am-button-bg-color: var(--am-fill-color-blank);
+  --am-button-text-color: var(--am-text-color-regular);
+  --am-button-disabled-text-color: var(--am-disabled-text-color);
+  --am-button-disabled-bg-color: var(--am-fill-color-blank);
+  --am-button-disabled-border-color: var(--am-border-color-light);
+  --am-button-hover-text-color: var(--am-color-primary);
+  --am-button-hover-bg-color: var(--am-color-primary-light-9);
+  --am-button-hover-border-color: var(--am-color-primary-light-7);
+  --am-button-active-text-color: var(--am-button-hover-text-color);
+  --am-button-active-border-color: var(--am-color-primary);
+  --am-button-active-bg-color: var(--am-button-hover-bg-color);
+  --am-button-outline-color: var(--am-color-primary-light-5);
+  --am-button-active-color: var(--am-text-color-primary);
+}
+
+.am-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--am-button-text-color);
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.1s;
+  font-weight: var(--am-button-font-weight);
+  user-select: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  background-color: var(--am-button-bg-color);
+  border: var(--am-border);
+  border-color: var(--am-button-border-color);
+  padding: 8px 15px;
+  font-size: var(--am-font-size-base);
+  border-radius: var(--am-border-radius-base);
+  & + & {
+    margin-left: 12px;
+  }
+  &:hover,
+  &:focus {
+    color: var(--am-button-hover-text-color);
+    border-color: var(--am-button-hover-border-color);
+    background-color: var(--am-button-hover-bg-color);
+    outline: none;
+  }
+  &:active {
+    color: var(--am-button-active-text-color);
+    border-color: var(--am-button-active-border-color);
+    background-color: var(--am-button-active-bg-color);
+    outline: none;
+  }
+  /*plain*/
+  &.is-plain {
+    --am-button-hover-text-color: var(--am-color-primary);
+    --am-button-hover-bg-color: var(--am-fill-color-blank);
+    --am-button-hover-border-color: var(--am-color-primary);
+  }
+  /*round*/
+  &.is-round {
+    border-radius: var(--am-border-radius-round);
+  }
+  /*circle*/
+  &.is-circle {
+    border-radius: 50%;
+    padding: 8px;
+  }
+  /*disabled*/
+  &.is-loading,
+  &.is-disabled,
+  &.is-disabled:hover,
+  &.is-disabled:focus,
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:focus {
+    color: var(--am-button-disabled-text-color);
+    cursor: not-allowed;
+    background-image: none;
+    background-color: var(--am-button-disabled-bg-color);
+    border-color: var(--am-button-disabled-border-color);
+  }
+  [class*='am-icon'] {
+    width: 1em;
+    height: 1em;
+  }
+}
+@each $val in primary, success, warning, info, danger {
+  .am-button--$(val) {
+    --am-button-text-color: var(--am-color-white);
+    --am-button-bg-color: var(--am-color-$(val));
+    --am-button-border-color: var(--am-color-$(val));
+    --am-button-outline-color: var(--am-color-$(val)-light-5);
+    --am-button-active-color: var(--am-color-$(val)-dark-2);
+    --am-button-hover-text-color: var(--am-color-white);
+    --am-button-hover-bg-color: var(--am-color-$(val)-light-3);
+    --am-button-hover-border-color: var(--am-color-$(val)-light-3);
+    --am-button-active-bg-color: var(--am-color-$(val)-dark-2);
+    --am-button-active-border-color: var(--am-color-$(val)-dark-2);
+    --am-button-disabled-text-color: var(--am-color-white);
+    --am-button-disabled-bg-color: var(--am-color-$(val)-light-5);
+    --am-button-disabled-border-color: var(--am-color-$(val)-light-5);
+  }
+  .am-button--$(val).is-plain {
+    --am-button-text-color: var(--am-color-$(val));
+    --am-button-bg-color: var(--am-color-$(val)-light-9);
+    --am-button-border-color: var(--am-color-$(val)-light-5);
+    --am-button-hover-text-color: var(--am-color-white);
+    --am-button-hover-bg-color: var(--am-color-$(val));
+    --am-button-hover-border-color: var(--am-color-$(val));
+    --am-button-active-text-color: var(--am-color-white);
+
+    --er-button-disabled-text-color: var(--am-color-$(val)-light-5);
+    --er-button-disabled-bg-color: var(--am-color-$(val)-light-9);
+    --er-button-disabled-border-color: var(--am-color-$(val)-light-8);
+  }
+}
+.am-button--large {
+  --am-button-size: 40px;
+  height: var(--am-button-size);
+  padding: 12px 19px;
+  font-size: var(--am-font-size-base);
+  border-radius: var(--am-border-radius-base);
+  /*circle*/
+  &.is-circle {
+    border-radius: 50%;
+    padding: 12px;
+  }
+}
+.am-button--small {
+  --am-button-size: 24px;
+  height: var(--am-button-size);
+  padding: 5px 11px;
+  font-size: 12px;
+  border-radius: calc(var(--am-border-radius-base) - 1px);
+  /*circle*/
+  &.is-circle {
+    border-radius: 50%;
+    padding: 5px;
+  }
+  [class*='er-icon'] {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.am-button-group {
+  display: inline-block;
+  vertical-align: middle;
+
+  &::after {
+    clear: both;
+  }
+  & > :deep(.er-button){
+    float: left;
+    position: relative;
+    margin-left: 0;
+    &:first-child{
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right-color: var(--am-button-group-border-color);
+    }
+    &:last-child{
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0; 
+      border-left-color: var(--am-button-group-border-color);
+    }
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+
+      border-left-color: var(--am-button-group-border-color);
+      border-right-color: var(--am-button-group-border-color);
+    }
+    &:not(:last-child) {
+      margin-right: -1px;
+    }
+    &:first-child:last-child {
+      border-top-right-radius: var(--am-border-radius-base);
+      border-bottom-right-radius: var(--am-border-radius-base);
+      border-top-left-radius: var(--am-border-radius-base);
+      border-bottom-left-radius: var(--am-border-radius-base);
+
+      &.is-round {
+        border-radius: var(--am-border-radius-round);
+      }
+
+      &.is-circle {
+        border-radius: 50%;
+      }
+    }
+  }
+}

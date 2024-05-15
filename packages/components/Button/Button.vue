@@ -28,4 +28,7 @@ const _ref = ref<HTMLButtonElement>()
   </component>
 </template>
 
-<style scoped></style>
+<style scoped>
+@import url('./style.css');
+
+</style>

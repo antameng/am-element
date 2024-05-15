@@ -1,2 +1,67 @@
-/** index.css */
-@import "./reset.css";
+@import './reset.css';
+
+:root {
+    /* colors */
+    --am-color-white: #ffffff;
+    --am-color-black: #000000;
+    --colors: (primary: #409eff, success: #67c23a, warning: #e6a23c, danger: #f56c6c, info: #909399);
+    --am-bg-color: #ffffff;
+    --am-bg-color-page: #f2f3f5;
+    --am-bg-color-overlay: #ffffff;
+    --am-text-color-primary: #303133;
+    --am-text-color-regular: #606266;
+    --am-text-color-secondary: #909399;
+    --am-text-color-placeholder: #a8abb2;
+    --am-text-color-disabled: #c0c4cc;
+    --am-border-color: #dcdfe6;
+    --am-border-color-light: #e4e7ed;
+    --am-border-color-lighter: #ebeef5;
+    --am-border-color-extra-light: #f2f6fc;
+    --am-border-color-dark: #d4d7de;
+    --am-border-color-darker: #cdd0d6;
+    --am-fill-color: #f0f2f5;
+    --am-fill-color-light: #f5f7fa;
+    --am-fill-color-lighter: #fafafa;
+    --am-fill-color-extra-light: #fafcff;
+    --am-fill-color-dark: #ebedf0;
+    --am-fill-color-darker: #e6e8eb;
+    --am-fill-color-blank: #ffffff;
+
+    @each $val, $color in var(--colors) {
+        --am-color-$(val): $(color);
+        @for $i from 3 to 9 {
+            --am-color-$(val)-light-$(i): mix(#fff, $(color), 0.$(i));
+        }
+        --am-color-$(val)-dark-2: mix(#000, $(color), 0.2);
+    }
+
+    /* border */
+    --am-border-width: 1px;
+    --am-border-style: solid;
+    --am-border-color-hover: var(--er-text-color-disabled);
+    --am-border: var(--er-border-width) var(--er-border-style) var(--er-border-color);
+    --am-border-radius-base: 4px;
+    --am-border-radius-small: 2px;
+    --am-border-radius-round: 20px;
+    --am-border-radius-circle: 100%;
+
+    /*font*/
+    --am-font-size-extra-large: 20px;
+    --am-font-size-large: 18px;
+    --am-font-size-medium: 16px;
+    --am-font-size-base: 14px;
+    --am-font-size-small: 13px;
+    --am-font-size-extra-small: 12px;
+    --am-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
+    --er-font-weight-primary: 500;
+
+    /*disabled*/
+    --am-disabled-bg-color: var(--am-fill-color-light);
+    --am-disabled-text-color: var(--am-text-color-placeholder);
+    --am-disabled-border-color: var(--am-border-color-light);
+
+    /*animation*/
+    --am-transition-duration: 0.4s;
+    --am-transition-duration-fast: 0.2s;
+}
