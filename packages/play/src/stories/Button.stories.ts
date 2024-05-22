@@ -67,12 +67,12 @@ export const Default: Story & { args: { content: string } } = {
         content: "Button",
     },
     render: (args) => ({
-        components: { ErButton },
+        components: { AmButton },
         setup() {
             return { args };
         },
         template: container(
-            `<er-button v-bind="args">{{args.content}}</er-button>`
+            `<am-button v-bind="args">{{args.content}}</am-button>`
         ),
     }),
     play: async ({ canvasElement, args, step }) => {
@@ -90,12 +90,12 @@ export const Circle: Story = {
         icon: "search",
     },
     render: (args) => ({
-        components: { ErButton },
+        components: { AmButton },
         setup() {
             return { args };
         },
         template: container(`
-      <er-button circle v-bind="args"/>
+      <am-button circle v-bind="args"/>
     `),
     }),
     play: async ({ canvasElement, args, step }) => {
@@ -138,7 +138,7 @@ export const Group: Story & { args: { content1: string; content2: string } } = {
         content2: "Button2",
     },
     render: (args) => ({
-        components: { ErButton, ErButtonGroup },
+        components: { AmButton, AmButtonGroup },
         setup() {
             return { args };
         },
