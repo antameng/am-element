@@ -38,8 +38,8 @@
     /* border */
     --am-border-width: 1px;
     --am-border-style: solid;
-    --am-border-color-hover: var(--er-text-color-disabled);
-    --am-border: var(--er-border-width) var(--er-border-style) var(--er-border-color);
+    --am-border-color-hover: var(--am-text-color-disabled);
+    --am-border: var(--am-border-width) var(--am-border-style) var(--am-border-color);
     --am-border-radius-base: 4px;
     --am-border-radius-small: 2px;
     --am-border-radius-round: 20px;

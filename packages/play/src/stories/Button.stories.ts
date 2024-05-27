@@ -1,7 +1,7 @@
 import type { Meta, StoryObj, ArgTypes } from '@storybook/vue3'
-import { fn } from '@storybook/test'
+import { fn,within,userEvent,expect } from '@storybook/test'
 import { AmButton } from "am-element";
-type Story = StoryObj<typeof AmButton> & { argTypes: ArgTypes }
+type Story = StoryObj<typeof AmButton> & { argTypes?: ArgTypes }
 
 const meta: Meta<typeof AmButton> = {
     title: "Example/Button",

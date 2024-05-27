@@ -117,9 +117,9 @@
     --am-button-hover-border-color: var(--am-color-$(val));
     --am-button-active-text-color: var(--am-color-white);
 
-    --er-button-disabled-text-color: var(--am-color-$(val)-light-5);
-    --er-button-disabled-bg-color: var(--am-color-$(val)-light-9);
-    --er-button-disabled-border-color: var(--am-color-$(val)-light-8);
+    --am-button-disabled-text-color: var(--am-color-$(val)-light-5);
+    --am-button-disabled-bg-color: var(--am-color-$(val)-light-9);
+    --am-button-disabled-border-color: var(--am-color-$(val)-light-8);
   }
 }
 .am-button--large {
@@ -145,7 +145,7 @@
     border-radius: 50%;
     padding: 5px;
   }
-  [class*='er-icon'] {
+  [class*='am-icon'] {
     width: 12px;
     height: 12px;
   }
@@ -158,7 +158,7 @@
   &::after {
     clear: both;
   }
-  & > :deep(.er-button){
+  & > :deep(.am-button){
     float: left;
     position: relative;
     margin-left: 0;
