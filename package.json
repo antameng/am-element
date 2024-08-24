@@ -1,5 +1,5 @@
 {
-  "name": "am-element",
+  "name": "@am-element/workspace",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "docs:dev": "pnpm --filter @am-element/docs dev",
     "docs:build": "pnpm --filter @am-element/docs build",
     "storybook": "pnpm --filter @am-element/play storybook",
-    "test": "echo \"todo\""
+    "test": "pnpm --filter @am-element/components test"
   },
   "keywords": [],
   "author": "",
