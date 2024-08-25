@@ -1,6 +1,6 @@
 import type { Meta, StoryObj, ArgTypes } from '@storybook/vue3'
 import { fn,within,userEvent,expect } from '@storybook/test'
-import { AmButton } from "am-element";
+import { AmButton, AmButtonGroup } from "am-element";
 type Story = StoryObj<typeof AmButton> & { argTypes?: ArgTypes }
 
 const meta: Meta<typeof AmButton> = {
@@ -49,7 +49,7 @@ const meta: Meta<typeof AmButton> = {
     },
     args: { onClick: fn() },
 };
-
+// 默认的容器
 const container = (val: string) => `
 <div style="margin:5px">
   ${val}
@@ -78,9 +78,8 @@ export const Default: Story & { args: { content: string } } = {
     play: async ({ canvasElement, args, step }) => {
         const canvas = within(canvasElement);
         await step("click button", async () => {
-            await userEvent.tripleClick(canvas.getByRole("button"));
+            await userEvent.click(canvas.getByRole('button'));
         });
-
         expect(args.onClick).toHaveBeenCalled();
     },
 };
@@ -143,10 +142,10 @@ export const Group: Story & { args: { content1: string; content2: string } } = {
             return { args };
         },
         template: container(`
-       <er-button-group :type="args.groupType" :size="args.groupSize" :disabled="args.groupDisabled">
-         <er-button v-bind="args">{{args.content1}}</er-button>
-         <er-button v-bind="args">{{args.content2}}</er-button>
-       </er-button-group>
+       <am-button-group :type="args.groupType" :size="args.groupSize" :disabled="args.groupDisabled">
+         <am-button v-bind="args">{{args.content1}}</am-button>
+         <am-button v-bind="args">{{args.content2}}</am-button>
+       </am-button-group>
     `),
     }),
     play: async ({ canvasElement, args, step }) => {

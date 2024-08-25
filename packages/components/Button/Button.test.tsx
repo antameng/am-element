@@ -1,8 +1,8 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, test, expect } from "vitest";
 import { mount } from "@vue/test-utils";
-
+import Icon from "../Icon/Icon.vue";
 import Button from "./Button.vue";
-
+import ButtonGroup from "./ButtonGroup.vue";
 describe("Button.vue", () => {
     // Props: type
     it("should has the correct type class when type prop is set", () => {
@@ -68,59 +68,76 @@ describe("Button.vue", () => {
         await wrapper.trigger("click");
         expect(wrapper.emitted().click).toHaveLength(1);
     });
+
+    // Exception Handling: loading state
+    it("should display loading icon and not emit click event when button is loading", async () => {
+        const wrapper = mount(Button, {
+            props: { loading: true },
+            global: {
+                stubs: ["ErIcon"],
+            },
+        });
+        const iconElement = wrapper.findComponent(Icon);
+
+        expect(wrapper.find(".loading-icon").exists()).toBe(true);
+        expect(iconElement.exists()).toBeTruthy();
+        expect(iconElement.attributes("icon")).toBe("spinner");
+        await wrapper.trigger("click");
+        expect(wrapper.emitted("click")).toBeUndefined();
+    });
 });
 
-// describe("ButtonGroup.vue", () => {
-//     test("basic button group", async () => {
-//       const wrapper = mount(() => (
-//         <ButtonGroup>
-//           <Button>button 1</Button>
-//           <Button>button 2</Button>
-//         </ButtonGroup>
-//       ));
-//
-//       expect(wrapper.classes()).toContain("er-button-group");
-//     });
-//
-//     test("button group size", () => {
-//       const sizes = ["large", "default", "small"];
-//       sizes.forEach((size) => {
-//         const wrapper = mount(() => (
-//           <ButtonGroup size={size as any}>
-//             <Button>button 1</Button>
-//             <Button>button 2</Button>
-//           </ButtonGroup>
-//         ));
-//
-//         const buttonWrapper = wrapper.findComponent(Button);
-//         expect(buttonWrapper.classes()).toContain(`er-button--${size}`);
-//       });
-//     });
-//
-//     test("button group type", () => {
-//       const types = ["primary", "success", "warning", "danger", "info"];
-//       types.forEach((type) => {
-//         const wrapper = mount(() => (
-//           <ButtonGroup type={type as any}>
-//             <Button>button 1</Button>
-//             <Button>button 2</Button>
-//           </ButtonGroup>
-//         ));
-//
-//         const buttonWrapper = wrapper.findComponent(Button);
-//         expect(buttonWrapper.classes()).toContain(`er-button--${type}`);
-//       });
-//     });
-//
-//     test("button group disabled", () => {
-//       const wrapper = mount(() => (
-//         <ButtonGroup disabled>
-//           <Button>button 1</Button>
-//           <Button>button 2</Button>
-//         </ButtonGroup>
-//       ));
-//
-//       const buttonWrapper = wrapper.findComponent(Button);
-//       expect(buttonWrapper.classes()).toContain(`is-disabled`);
-//     });
-//   });
+describe("ButtonGroup.vue", () => {
+    test("basic button group", async () => {
+        const wrapper = mount(() => (
+            <ButtonGroup>
+                <Button>button 1</Button>
+                <Button>button 2</Button>
+            </ButtonGroup>
+        ));
+
+        expect(wrapper.classes()).toContain("am-button-group");
+    });
+
+    test("button group size", () => {
+        const sizes = ["large", "default", "small"];
+        sizes.forEach((size) => {
+            const wrapper = mount(() => (
+                <ButtonGroup size={size as any}>
+                    <Button>button 1</Button>
+                    <Button>button 2</Button>
+                </ButtonGroup>
+            ));
+
+            const buttonWrapper = wrapper.findComponent(Button);
+            expect(buttonWrapper.classes()).toContain(`am-button--${size}`);
+        });
+    });
+
+    test("button group type", () => {
+        const types = ["primary", "success", "warning", "danger", "info"];
+        types.forEach((type) => {
+            const wrapper = mount(() => (
+                <ButtonGroup type={type as any}>
+                    <Button>button 1</Button>
+                    <Button>button 2</Button>
+                </ButtonGroup>
+            ));
+
+            const buttonWrapper = wrapper.findComponent(Button);
+            expect(buttonWrapper.classes()).toContain(`am-button--${type}`);
+        });
+    });
+
+    test("button group disabled", () => {
+        const wrapper = mount(() => (
+            <ButtonGroup disabled>
+                <Button>button 1</Button>
+                <Button>button 2</Button>
+            </ButtonGroup>
+        ));
+
+        const buttonWrapper = wrapper.findComponent(Button);
+        expect(buttonWrapper.classes()).toContain(`is-disabled`);
+    });
+});

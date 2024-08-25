@@ -1,4 +1,4 @@
-import { AmButton,AmIcon } from '@am-element/components'
+import { AmButton, AmButtonGroup, AmIcon } from '@am-element/components'
 import type { Plugin } from 'vue'
 
-export default [AmButton,AmIcon] as Plugin[]
+export default [AmButton, AmIcon, AmButtonGroup] as Plugin[]

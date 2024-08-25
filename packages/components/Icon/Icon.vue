@@ -6,7 +6,7 @@ import { computed } from "vue";
 
 defineOptions({
   name: 'AmIcon',
-  inheritAttrs: false
+  inheritAttrs: false  //把透传关了
 })
 const props = defineProps<IconProps>()
 
@@ -38,8 +38,7 @@ const filterProps = computed(() => {
 
 @each $val in primary, info, success, warning, danger {
   .am-icon-$(val) {
-    --am-icon-color: var(--am-color-$(
-        val))
+    --am-icon-color: var(--am-color-$( val))
   }
 }
 </style>
