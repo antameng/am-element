@@ -24,21 +24,6 @@ const filterProps = computed(() => {
   </i>
 </template>
 
-<style scoped>
-.am-icon {
-  --am-icon-color: inherit;
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  fill: currentColor;
-  color: var(--am-icon-color);
-  font-size: inherit;
-}
-
-@each $val in primary, info, success, warning, danger {
-  .am-icon-$(val) {
-    --am-icon-color: var(--am-color-$( val))
-  }
-}
+<style>
+@import url('./style.css');
 </style>
