@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@am-element/components':
-        specifier: workspace:*
-        version: link:packages/components
       '@am-element/hooks':
         specifier: workspace:*
         version: link:packages/hooks
@@ -5091,8 +5088,8 @@ packages:
   vue-component-type-helpers@2.0.18:
     resolution: {integrity: sha512-zi1QaDBhSb3oeHJh55aTCrosFNKEQsOL9j3XCAjpF9dwxDUUtd85RkJVzO+YpJqy1LNoCWLU8gwuZ7HW2iDN/A==}
 
-  vue-component-type-helpers@2.0.29:
-    resolution: {integrity: sha512-58i+ZhUAUpwQ+9h5Hck0D+jr1qbYl4voRt5KffBx8qzELViQ4XdT/Tuo+mzq8u63teAG8K0lLaOiL5ofqW38rg==}
+  vue-component-type-helpers@2.1.0:
+    resolution: {integrity: sha512-Ec+sh0qzakYsoKiyey7izf83sVqOcB9PT12LU9z4csAaJ4CipO6o0+5PVMJRgMryKAi9HL7SDEVqoGNpcxzSmA==}
 
   vue-demi@0.14.7:
     resolution: {integrity: sha512-EOG8KXDQNwkJILkx/gPcoL/7vH+hORoBaKgGe+6W7VFMvCYJfmF2dGbvgDroVnI8LU7/kTu8mbjRZGBU1z9NTA==}
@@ -7293,7 +7290,7 @@ snapshots:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.38(typescript@5.4.5)
-      vue-component-type-helpers: 2.0.29
+      vue-component-type-helpers: 2.1.0
     transitivePeerDependencies:
       - encoding
       - prettier
@@ -11088,7 +11085,7 @@ snapshots:
 
   vue-component-type-helpers@2.0.18: {}
 
-  vue-component-type-helpers@2.0.29: {}
+  vue-component-type-helpers@2.1.0: {}
 
   vue-demi@0.14.7(vue@3.4.25(typescript@5.4.5)):
     dependencies:
