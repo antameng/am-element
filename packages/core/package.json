@@ -1,6 +1,7 @@
 {
   "name": "am-element",
   "version": "1.0.0",
+  "type": "module",
   "description": "Components library by vue3 and ts",
   "main": "./dist/umd/index.umd.cjs",
   "module": "./dist/es/index.js",

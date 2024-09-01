@@ -1,4 +1,4 @@
-import { f as t } from "./vendor-BVNR0mO6.mjs";
+import { f as t } from "./vendor-BVNR0mO6.js";
 function i(a) {
   return (r) => t(a, (l) => r.use(l));
 }

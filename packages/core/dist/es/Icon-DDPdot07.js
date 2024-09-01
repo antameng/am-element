@@ -1,7 +1,7 @@
 import { defineComponent as p, computed as o, openBlock as l, createElementBlock as s, mergeProps as i, createVNode as c, unref as m, normalizeProps as y, guardReactiveProps as B } from "vue";
 import { FontAwesomeIcon as u } from "@fortawesome/vue-fontawesome";
-import { o as f } from "./vendor-BVNR0mO6.mjs";
-import { w as d } from "./utils-BkHCoCCW.mjs";
+import { o as f } from "./vendor-BVNR0mO6.js";
+import { w as d } from "./utils-COEfI4R3.js";
 const v = /* @__PURE__ */ p({
   name: "AmIcon",
   inheritAttrs: !1,
